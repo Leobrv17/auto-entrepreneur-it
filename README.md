@@ -13,6 +13,10 @@ npm install
 npm run dev
 ```
 
+### Documentation Swagger
+
+Une documentation interactive est disponible sur `/api-docs` (spec JSON sur `/api-docs.json`).
+
 ### Seed admin
 
 ```bash
