@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  mongodb:
+    image: mongo:7
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: auto_entrepreneur
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+  api:
+    build: .
+    command: ["npm", "run", "dev"]
+    environment:
+      - PORT=4000
+      - MONGO_URI=mongodb://mongodb:27017/auto_entrepreneur
+      - JWT_SECRET=change-me
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongodb
+volumes:
+  mongo_data:
