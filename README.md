@@ -5,12 +5,10 @@ API Express + MongoDB pour la gestion de projets et kanban avec rôles admin/cli
 ## Lancement
 
 ```bash
-docker compose up --build
-```
+# lancer uniquement MongoDB via Docker
+docker compose up -d mongodb
 
-ou en local (nécessite MongoDB lancé sur `MONGO_URI` de `.env`):
-
-```bash
+# installer et démarrer l'API en local (nécessite un `.env` basé sur `.env.example`)
 npm install
 npm run dev
 ```
